@@ -41,6 +41,7 @@ describe("Client", function () {
     };
 
     fakes.EndpointManager.returns(fakes.endpointManager);
+    fakes.endpointManager.setMaxListeners(1000);
     fakes.endpointManager.shutdown = sinon.stub();
 
     Client = require("../lib/client")(fakes);

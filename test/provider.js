@@ -13,6 +13,7 @@ describe("Provider", function() {
     };
 
     fakes.Client.returns(fakes.client);
+    fakes.client.setMaxListeners(1000);
     fakes.client.write = sinon.stub();
     fakes.client.shutdown = sinon.stub();
 

@@ -10,6 +10,7 @@ describe("Endpoint Manager", function () {
     fakes = {
       Endpoint: sinon.spy(function() {
         const endpoint = new EventEmitter();
+        endpoint.setMaxListeners(1000);
         endpoint.destroy = sinon.spy();
         endpoint.createStream = sinon.stub().returns({"kind": "stream"});
         return endpoint;
